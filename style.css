@@ -1,0 +1,84 @@
+* {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    font-size: 24px;
+}
+body {
+    background: var(--Light-grayish-cyan);
+    font-family: 'Space Mono';
+    padding: 50px 0;
+}
+main {
+    background: var(--White);
+    border-radius: 20px;
+    padding: 3%;
+    align-items: center;
+}
+.card {
+    background: var(--Very-dark-cyan);
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    margin: 10px;
+}
+input {
+    /* display: block; */
+    width: 80%;
+    background: var(--Very-light-grayish-cyan);
+    border: none;
+
+}
+label {
+    display: block;
+}
+i {
+    position: relative;
+    left: 20px;
+}
+li, button {
+    padding: 0.5rem;
+    list-style: none;
+    border-radius: 5px;
+    /* border: 1px black solid; */
+    margin: 0.5rem;
+    display: inline;
+    /* width: 5rem; */
+    background: var(--Very-dark-cyan);
+    color: var(--White);
+}
+li::after, li:active {
+    background: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+button {
+    background: var(--Strong-cyan);
+    width: 70%;
+}
+ol {
+    display:grid;
+    grid-template-columns: auto auto;
+
+}
+#custom {
+    background: var(--Very-light-grayish-cyan);
+    color: var(--Grayish-cyan);
+}
+
+@media (min-width:375px){
+     
+    main {
+        width: 50vw;
+        display:flex;
+        margin: 0 auto;
+    }
+    ol {
+        grid-template-columns: auto auto auto;
+    }
+    
+}
