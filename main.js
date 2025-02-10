@@ -12,36 +12,47 @@ const total = document.getElementById('total');
 const bill = document.getElementById('bill');
 const people = document.getElementById('people');
 
-let pen = Number(bill.value);
-let person = Number(people.value);
+const reset = document.getElementsByTagName('button');
+
+let person;
+
 
  five.addEventListener('click', ()=>{
     precent = Number(bill.value) * 0.05;
-    console.log(precent)
-    tip.innerText = precent/person;
+    person = Number(people.value);
+    tip.innerText = (precent/person).toFixed(2);
+    total.innerText += tip.innerText;
 });
-pen = ten.addEventListener('click', ()=>{
-    precent = 0.1 * bill.value;
-    return precent;
+ten.addEventListener('click', ()=>{
+    precent = Number(bill.value) * 0.1;
+    person = Number(people.value);
+    tip.innerText = (precent/person).toFixed(2);
+    total.innerText += tip.innerText;
 });
-pen = fifteen.addEventListener('click', ()=>{
-    precent = 0.2 * bill.value;
-    return precent;
+fifteen.addEventListener('click', ()=>{
+    precent = Number(bill.value) * 0.15;
+    person = Number(people.value);
+    tip.innerText = (precent/person).toFixed(2);
+    total.innerText += tip.innerText;
 });
-pen = twofive.addEventListener('click', ()=>{
-    precent = 0.25 * bill.value;
-    return precent;
+twofive.addEventListener('click', ()=>{
+    precent = Number(bill.value) * 0.25;
+    person = Number(people.value);
+    tip.innerText = (precent/person).toFixed(2);
+    total.innerText += tip.innerText;
 })
-pen = fifty.addEventListener('click', ()=>{
-    precent = 0.5 * bill.value;
-    return precent;
+fifty.addEventListener('click', ()=>{
+    precent = Number(bill.value) * 0.5;
+    person = Number(people.value);
+    tip.innerText = (precent/person).toFixed(2);
+    total.innerText += tip.innerText;
 })
 custom.addEventListener('click', ()=>{
     edit(custom.innerText);
 })
 
 function handleClick(){
-    tip.value = pen;
+    
 }
 
 function edit(text){

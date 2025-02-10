@@ -58,6 +58,9 @@ li::after, li:active {
 button {
     background: var(--Strong-cyan);
     width: 70%;
+    display: flex;
+    margin-inline: auto;
+    justify-content: center;
 }
 ol {
     display:grid;
@@ -70,7 +73,8 @@ ol {
 }
 .div {
     display: flex;
-    justify-items:auto;
+    width:100%;
+    justify-content: space-between;
 }
 
 @media (min-width:375px){
