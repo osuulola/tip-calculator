@@ -23,7 +23,6 @@ main {
     background: var(--Very-dark-cyan);
     border-radius: 20px;
     width: 80%;
-    margin: 0 auto;
     padding: 10px;
     margin: 10px;
 }
@@ -68,6 +67,10 @@ ol {
 #custom {
     background: var(--Very-light-grayish-cyan);
     color: var(--Grayish-cyan);
+}
+.div {
+    display: flex;
+    justify-items:auto;
 }
 
 @media (min-width:375px){
