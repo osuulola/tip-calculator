@@ -1,9 +1,9 @@
 // buttons
-const five = document.getElementById('five');
-const ten = document.getElementById('ten');
-const fifteen = document.getElementById('fifteen');
-const twofive = document.getElementById('twofive');
-const fifty = document.getElementById('fifty');
+const five = document.getElementById('5');
+const ten = document.getElementById('10');
+const fifteen = document.getElementById('15');
+const twofive = document.getElementById('25');
+const fifty = document.getElementById('50');
 const custom = document.getElementById('custom');
 
 const tip = document.getElementById('tip');
@@ -21,37 +21,57 @@ reset.addEventListener('click', ()=>{
     total.innerText = '$0.00';
 })
 
-let precent, person;
+let precent, person, num;
  
-
-
- five.addEventListener('click', ()=>{
-    precent = Number(bill.value) * 0.05;
-    person = Number(people.value);
-    tip.innerText = '$'+(precent/person).toFixed(2);
-    // total.innerText = Number(total.innerText)+ Number(tip.innerText);
+five.addEventListener('click', ()=>{
+    num = 0.05
+    handleClick()
 });
+
 ten.addEventListener('click', ()=>{
-    precent = Number(bill.value) * 0.1;
-    person = Number(people.value);
-    tip.innerText = '$'+(precent/person).toFixed(2);
-    // total.innerText += Number(tip.innerText).toFixed(2);
+    num = 0.1;
+    handleClick()
 });
 fifteen.addEventListener('click', ()=>{
-    precent = Number(bill.value) * 0.15;
-    person = Number(people.value);
-    tip.innerText = '$'+(precent/person).toFixed(2);
+    num = 0.15;
+    handleClick()
 });
 twofive.addEventListener('click', ()=>{
-    precent = Number(bill.value) * 0.25;
-    person = Number(people.value);
-    tip.innerText = '$'+(precent/person).toFixed(2);
+    num = 0.25
+    handleClick()
 })
 fifty.addEventListener('click', ()=>{
-    precent = Number(bill.value) * 0.5;
-    person = Number(people.value);
-    tip.innerText = '$'+(precent/person).toFixed(2);
+    num = 0.5;
+    handleClick()
 })
-custom.addEventListener('click', ()=>{
-    edit(custom.innerText)
-});
+custom.addEventListener('keydown', ()=>{
+    if (event.key === 'Enter'){
+        custom.contentEditable = 'false';
+        handleCustom();
+        
+    }  
+})
+
+
+function handleClick(){
+    precent = Number(bill.value) * num;
+    person = Number(people.value);
+    let ans = (precent/person).toFixed(2);
+    if(bill.value > 0){
+         tip.innerText = '$'+ans;
+         pass = Number(ans)
+         handleTotal(pass)
+    } 
+}
+function handleTotal(n) {
+    let ans = Number(total.innerText.substring(1));
+    ans += n;
+    console.log(ans)
+    total.innerText = '$'+ ans.toFixed(2);
+}
+function handleCustom() {
+    num = (Number(custom.innerText))/100;
+    handleClick();
+    custom.innerText = 'Custom';
+    custom.contentEditable = 'true';
+}
